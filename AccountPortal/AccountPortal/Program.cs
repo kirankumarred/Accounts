@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace AccountPortal
+namespace Kiran.Accountportal.UI
 {
     static class Program
     {
@@ -15,7 +15,18 @@ namespace AccountPortal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            try
+            {
+                Login login = new Login();
+                if (login.ShowDialog() == DialogResult.Cancel)
+                    return;
+                Application.Run(new MainForm());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Caught exception: " + ex.Message + " \n " + ex.StackTrace, "Real Deal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -8,3 +8,5 @@
 /AccountPortal/ServiceFactory/bin
 /AccountPortal/ServicesInterface/obj
 /AccountPortal/ServicesInterface/bin
+/AccountPortal/Common/obj
+/AccountPortal/Common/bin
